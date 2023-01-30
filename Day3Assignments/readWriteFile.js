@@ -5,7 +5,7 @@ fs.readFile("file1.txt", function(err,data) {
         console.log("Read file 1:", err)
     } else {
         fileContents += data.toString()
-        fs.writeFile("file4.txt",fileContents, function(err){
+        fs.writeFile("file4.txt",data,{flag:'a'}, function(err){
             if (err) {
                 console.log("File 4 write error", err)
             } else {
@@ -19,7 +19,7 @@ fs.readFile("file2.txt", function(err,data) {
         console.log("Read file 2:", err)
     } else {
         fileContents += data.toString()
-        fs.writeFile("file4.txt",fileContents, function(err){
+        fs.writeFile("file4.txt",data,{flag:'a'}, function(err){
             if (err) {
                 console.log("File 4 write error", err)
             } else {
@@ -33,7 +33,7 @@ fs.readFile("file3.txt", function(err,data) {
         console.log("Read file 3:", err)
     } else {
         fileContents += data.toString()
-        fs.writeFile("file4.txt",fileContents, function(err){
+        fs.writeFile("file4.txt",data,{flag:'a'}, function(err){
             if (err) {
                 console.log("File 4 write error", err)
             } else {
