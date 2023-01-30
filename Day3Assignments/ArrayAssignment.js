@@ -20,17 +20,17 @@ console.log("employee position with given salary is ", pos)
 
 //Add an obj at a particular index position in the arrOfObj
 //function addEmp(arrObj,emp,position)=> boolean
-let newEmployee =  { empId: 108, empName: "Kritika", salary: 5000, deptId: "D2" }
+var newEmployee =  { empId: 105, empName: "Kritika", salary: 5000, deptId: "D2" }
 function addEmployee(newEmployee,index,empArr) {
     empArr.splice(index,0,newEmployee)
     console.log("Inserted element in array ", empArr)
 }
-addEmployee(newEmployee, 2, empArr)
+//addEmployee(newEmployee, 2, empArr)
 
 //3. Remove an obj from the arrOfObj
 //function removeEmp(arrObj,emp)=> boolean
 function removeEmp(empArr,employee) {
-    empArr.splice(empArr.findIndex(emp => emp.id === employee.id) , 1)
+    empArr.splice(empArr.findIndex(emp => emp.empId === employee.empId) , 1)
     console.log("Removed employee ", empArr)
 }
 removeEmp(empArr,newEmployee)
@@ -38,6 +38,6 @@ removeEmp(empArr,newEmployee)
 // 4. Get a particule emp details from arrObj
 // function getEmpDetails(arrObj,empId)=> Obj
 function getEmpDetails(arrObj,empId) {
-    return arrObj.filter(element => element.id === empId)
+    return arrObj.filter(element => element.empId === empId)
 }
 console.log("Removed object is ",getEmpDetails(empArr, 106))
