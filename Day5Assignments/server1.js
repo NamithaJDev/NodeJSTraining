@@ -18,7 +18,7 @@ var empArr = [
 var server = http.createServer((request, response)=> {
     response.end("server started")
     var urlObject=url.parse(request.url);
-    if (request.method == "POST") {
+    if (request.method == "DELETE") {
         if (request.url == "/employees") {
             request.on('data', function (data) {
                 body += data;
