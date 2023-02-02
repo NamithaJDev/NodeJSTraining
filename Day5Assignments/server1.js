@@ -34,13 +34,8 @@ var server = http.createServer((request, response)=> {
         if (request.url == "/deleteEmployee") {
             var qsObject = qs.parse(urlObject.query);
             console.log("Querystring object ", qsObject);
-            // iterate through the various fields of an object
-            // for (item of Object.keys(qsObject)) {
-            //     console.log(` ${item} : ${qsObject[item]}`);
-            // }
             let key = Object.keys(qsObject)
             let deletedArray = empArr.filter((employee=>employee.empId == qsObject[key]))
-            //response.end(JSON.stringify(qsObject));
             request.on('data', function (data) {
                 body += data;
                 response.end(JSON.stringify(deletedArray));
